@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Algorithms.NET.BubbleSort
+namespace Algorithms.NET.Sorting.BubbleSort
 {
-    public static class BubbleSort
+    public static class BubbleSortAlgorithm
     {
         /// <summary>
         /// Sorting a list of numbers in descending order using BubbleSort algorithm.
@@ -30,7 +30,7 @@ namespace Algorithms.NET.BubbleSort
         /// Sorting a list according ascending or descending
         /// </summary>
         /// <param name="list">List of numbers to sort</param>
-        /// <param name="sortDescending">Boolean value specifying wheter sorting should be done descending</param>
+        /// <param name="sortDescending">Boolean value specifying whether sorting should be done descending</param>
         /// <returns>A sorted list</returns>
         private static IEnumerable<double> Sort(List<double> list, bool sortDescending)
         {
