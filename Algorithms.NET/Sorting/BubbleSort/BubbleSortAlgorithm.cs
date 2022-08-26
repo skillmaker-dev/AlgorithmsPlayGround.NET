@@ -54,8 +54,6 @@ namespace Algorithms.NET.Sorting.BubbleSort
                     }
                 }
 
-
-
                 if (isSorted)
                     return sortedList;
             }
