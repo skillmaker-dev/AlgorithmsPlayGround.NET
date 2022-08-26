@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Algorithms.NET.Sorting.BubbleSort;
 using Algorithms.NET.Sorting.SelectionSort;
+using Algorithms.NET.Sorting.InsertionSort;
 
 namespace Algorithms.NET.Debug
 {
@@ -21,6 +22,10 @@ namespace Algorithms.NET.Debug
         [Benchmark]
         public void SelectionSort() =>
         SelectionSortAlgorithm.SortDescending(_unsortedAsc);
+
+        [Benchmark]
+        public void InsertionSort() =>
+        InsertionSortAlgorithm.SortDescending(_unsortedAsc);
 
     }
 }
