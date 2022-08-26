@@ -27,14 +27,15 @@ namespace Algorithms.NET.Sorting.BubbleSort
 
 
         /// <summary>
-        /// Sorting a list according ascending or descending
+        /// Sorting a list according ascending or descending using BubbleSort Algorithm, Time complexity of O(n2) in worst case scenario.
         /// </summary>
         /// <param name="list">List of numbers to sort</param>
         /// <param name="sortDescending">Boolean value specifying whether sorting should be done descending</param>
         /// <returns>A sorted list</returns>
         private static IEnumerable<double> Sort(List<double> list, bool sortDescending)
         {
-            var sortedList = list;
+            var sortedList = new List<double>();
+            sortedList.AddRange(list);
             bool isSorted;
 
             for (int i = 0; i < sortedList.Count; i++)
@@ -42,6 +43,7 @@ namespace Algorithms.NET.Sorting.BubbleSort
                 isSorted = true;
                 for (int j = 1; j < sortedList.Count - i; j++)
                 {
+                    //Swapping numbers based on if sortDescending is true or false
                     if (sortDescending && sortedList[j - 1] < sortedList[j])
                     {
                         (sortedList[j - 1], sortedList[j]) = (sortedList[j], sortedList[j - 1]);
@@ -53,6 +55,8 @@ namespace Algorithms.NET.Sorting.BubbleSort
                         isSorted = false;
                     }
                 }
+
+
 
                 if (isSorted)
                     return sortedList;
