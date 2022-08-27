@@ -34,8 +34,7 @@ namespace Algorithms.NET.Sorting.InsertionSort
         /// <returns>A sorted list</returns>
         private static List<double> Sort(List<double> list,bool sortDescending)
         {
-            List<double> sortedList = new List<double>();
-            sortedList.AddRange(list);
+            List<double> sortedList = new List<double>(list);
 
             for(int i = 1;i < list.Count;i++)
             {

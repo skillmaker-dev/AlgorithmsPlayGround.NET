@@ -7,13 +7,22 @@ using System.Threading.Tasks;
 using Algorithms.NET.Sorting.BubbleSort;
 using Algorithms.NET.Sorting.SelectionSort;
 using Algorithms.NET.Sorting.InsertionSort;
+using Algorithms.NET.Sorting.MergeSort;
 
 namespace Algorithms.NET.Debug
 {
     [MemoryDiagnoser]
     public class BenchmarkDemo
     {
-        private readonly List<double> _unsortedAsc = new() { 0D, 1D, 2D, 3D, 4D, 5D,6D,7D,8D,9D,10D,11D,12D,13D,14D,15D,16D,17D,18D,19D,20D };
+        private readonly List<double> _unsortedAsc = new();
+
+        public BenchmarkDemo()
+        {
+             for(int i = 0; i < 1000;i++)
+            {
+                _unsortedAsc.Add((double)i);
+            }
+        }
 
         [Benchmark]
         public void BubbleSort() => 
@@ -26,6 +35,10 @@ namespace Algorithms.NET.Debug
         [Benchmark]
         public void InsertionSort() =>
         InsertionSortAlgorithm.SortDescending(_unsortedAsc);
+
+        [Benchmark]
+        public void MergeSort() =>
+        MergeSortAlgorithm.SortDescending(_unsortedAsc);
 
     }
 }

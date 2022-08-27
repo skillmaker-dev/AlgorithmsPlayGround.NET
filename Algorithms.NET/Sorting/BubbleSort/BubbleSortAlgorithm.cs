@@ -34,8 +34,7 @@ namespace Algorithms.NET.Sorting.BubbleSort
         /// <returns>A sorted list</returns>
         private static IEnumerable<double> Sort(List<double> list, bool sortDescending)
         {
-            var sortedList = new List<double>();
-            sortedList.AddRange(list);
+            var sortedList = new List<double>(list);
             bool isSorted;
 
             for (int i = 0; i < sortedList.Count; i++)
