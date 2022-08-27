@@ -18,11 +18,17 @@ using BenchmarkDotNet.Running;
 //    Console.WriteLine(item);
 //}
 
-
-
-
+//List<double> _unsortedAsc = new();
+//var rand = new Random();
+//for (int i = 0; i < 1000000; i++)
+//{
+//    _unsortedAsc.Add(rand.Next(1000000));
+//}
 
 var summary = BenchmarkRunner.Run<BenchmarkDemo>();
+
+
+
 
 
 

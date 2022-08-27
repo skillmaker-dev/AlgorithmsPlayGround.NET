@@ -14,31 +14,39 @@ namespace Algorithms.NET.Debug
     [MemoryDiagnoser]
     public class BenchmarkDemo
     {
-        private readonly List<double> _unsortedAsc = new();
+        private List<double> _unsortedDesc = new();
+        private List<double> _unsortedDesc2 = new();
 
         public BenchmarkDemo()
         {
-             for(int i = 0; i < 1000;i++)
+            var rand = new Random();
+             for(int i = 0; i < 10000;i++)
             {
-                _unsortedAsc.Add((double)i);
+                _unsortedDesc.Add(rand.Next(1000000));
+                _unsortedDesc2.Add(rand.Next(1000000));
             }
         }
 
         [Benchmark]
+        public void BuiltInSort() =>
+        _unsortedDesc.Sort();
+        
+
+        [Benchmark]
         public void BubbleSort() => 
-        BubbleSortAlgorithm.SortDescending(_unsortedAsc);
+        BubbleSortAlgorithm.SortAscending(_unsortedDesc);
 
         [Benchmark]
         public void SelectionSort() =>
-        SelectionSortAlgorithm.SortDescending(_unsortedAsc);
+        SelectionSortAlgorithm.SortAscending(_unsortedDesc);
 
         [Benchmark]
         public void InsertionSort() =>
-        InsertionSortAlgorithm.SortDescending(_unsortedAsc);
+        InsertionSortAlgorithm.SortAscending(_unsortedDesc);
 
         [Benchmark]
         public void MergeSort() =>
-        MergeSortAlgorithm.SortDescending(_unsortedAsc);
+        MergeSortAlgorithm.SortAscending(_unsortedDesc2);
 
     }
 }
