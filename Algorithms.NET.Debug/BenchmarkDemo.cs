@@ -8,45 +8,50 @@ using Algorithms.NET.Sorting.BubbleSort;
 using Algorithms.NET.Sorting.SelectionSort;
 using Algorithms.NET.Sorting.InsertionSort;
 using Algorithms.NET.Sorting.MergeSort;
+using Algorithms.NET.Sorting.QuickSort;
 
 namespace Algorithms.NET.Debug
 {
     [MemoryDiagnoser]
     public class BenchmarkDemo
     {
-        private List<double> _unsortedDesc = new();
-        private List<double> _unsortedDesc2 = new();
+        private List<double> _unsorted = new();
+        private List<double> _unsorted2 = new();
 
         public BenchmarkDemo()
         {
             var rand = new Random();
              for(int i = 0; i < 10000;i++)
             {
-                _unsortedDesc.Add(rand.Next(1000000));
-                _unsortedDesc2.Add(rand.Next(1000000));
+                _unsorted.Add(rand.Next(1000000));
+                _unsorted2.Add(rand.Next(1000000));
             }
         }
 
         [Benchmark]
         public void BuiltInSort() =>
-        _unsortedDesc.Sort();
+        _unsorted2.Sort();
         
 
-        [Benchmark]
+        //[Benchmark]
         public void BubbleSort() => 
-        BubbleSortAlgorithm.SortAscending(_unsortedDesc);
+        BubbleSortAlgorithm.SortAscending(_unsorted);
 
-        [Benchmark]
+        //[Benchmark]
         public void SelectionSort() =>
-        SelectionSortAlgorithm.SortAscending(_unsortedDesc);
+        SelectionSortAlgorithm.SortAscending(_unsorted);
 
-        [Benchmark]
+        //[Benchmark]
         public void InsertionSort() =>
-        InsertionSortAlgorithm.SortAscending(_unsortedDesc);
+        InsertionSortAlgorithm.SortAscending(_unsorted);
 
         [Benchmark]
         public void MergeSort() =>
-        MergeSortAlgorithm.SortAscending(_unsortedDesc2);
+        MergeSortAlgorithm.SortAscending(_unsorted);
+
+        [Benchmark]
+        public void QuickSort() =>
+        QuickSortAlgorithm.SortAscending(_unsorted);
 
     }
 }
