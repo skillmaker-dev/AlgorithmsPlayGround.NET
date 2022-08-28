@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Algorithms.NET.Sorting.QuickSort
 {
@@ -14,8 +12,8 @@ namespace Algorithms.NET.Sorting.QuickSort
         public static List<double> SortAscending(List<double> list)
         {
             List<double> sortedList = new List<double>(list);
-            
-            return Sort(sortedList, 0, sortedList.Count - 1,false);
+
+            return Sort(sortedList, 0, sortedList.Count - 1, false);
         }
 
         /// <summary>
@@ -39,14 +37,14 @@ namespace Algorithms.NET.Sorting.QuickSort
         /// <param name="start">Index of first item</param>
         /// <param name="sortDescending">Boolean value specifying whether sorting should be done in descending order</param>
         /// <returns>A sorted list</returns>
-        private static List<double> Sort(List<double> list, int start, int end,bool sortDescending)
+        private static List<double> Sort(List<double> list, int start, int end, bool sortDescending)
         {
             var i = start;
             var j = end;
 
             //Select middle as the pivot
-            var pivot = list[(start+end)/2];
-            while(i < j)
+            var pivot = list[(start + end) / 2];
+            while (i < j)
             {
                 //Skip elements that are less than pivot
                 while ((!sortDescending && list[i] < pivot) || (sortDescending && list[i] > pivot))
@@ -57,20 +55,20 @@ namespace Algorithms.NET.Sorting.QuickSort
                     j--;
 
                 //Swap elements that are out of order
-                if(i <= j)
+                if (i <= j)
                 {
-                    (list[i], list[j]) = (list[j],list[i]);
+                    (list[i], list[j]) = (list[j], list[i]);
                     i++;
                     j--;
                 }
             }
 
-            if(start < j)
+            if (start < j)
                 //Sort the right side
-                Sort(list,start,j,sortDescending);
-            if(end > i)
+                Sort(list, start, j, sortDescending);
+            if (end > i)
                 //Sort the left side
-                Sort(list,i,end,sortDescending);
+                Sort(list, i, end, sortDescending);
 
             return list;
         }

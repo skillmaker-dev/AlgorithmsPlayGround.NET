@@ -1,7 +1,4 @@
-﻿using Algorithms.NET.Debug;
-using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Running;
-List<double> unsortedAsc = new() { 0, 1, 2, 3, 4, 5 };
+﻿List<double> unsortedAsc = new() { 0, 1, 2, 3, 4, 5 };
 List<double> unsortedDesc = new() { 5, 4, 3, 2, 1, 0 };
 List<double> unsortedRand = new() { 8, 9, 3, 3, 10, 1 };
 

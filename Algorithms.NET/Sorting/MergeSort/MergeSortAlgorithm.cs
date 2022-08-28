@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Algorithms.NET.Sorting.MergeSort
 {
@@ -14,7 +12,7 @@ namespace Algorithms.NET.Sorting.MergeSort
         public static List<double> SortAscending(List<double> list)
         {
             List<double> sortedList = new List<double>(list);
-            return Sort(sortedList,false);
+            return Sort(sortedList, false);
         }
 
         /// <summary>
@@ -34,7 +32,7 @@ namespace Algorithms.NET.Sorting.MergeSort
         /// <param name="list">List of numbers to sort</param>
         /// <param name="sortDescending">Boolean value specifying whether sorting should be done in descending order</param>
         /// <returns>A sorted list</returns>
-        private static List<double> Sort(List<double> list,bool sortDescending)
+        private static List<double> Sort(List<double> list, bool sortDescending)
         {
             //We stop recursion when size is 1, which means an array of one element is sorted.
             if (list.Count < 2)
@@ -47,15 +45,15 @@ namespace Algorithms.NET.Sorting.MergeSort
             List<double> right = new List<double>();
 
             //Fill each half
-            for(int i = 0; i < middle; i++)
+            for (int i = 0; i < middle; i++)
                 left.Add(list[i]);
 
-            for(int j = middle; j < list.Count; j++)
+            for (int j = middle; j < list.Count; j++)
                 right.Add(list[j]);
 
             //Sort each half.
-            Sort(left,sortDescending);
-            Sort(right,sortDescending);
+            Sort(left, sortDescending);
+            Sort(right, sortDescending);
 
             //Merge the results
             Merge(left, right, list, sortDescending);
@@ -70,24 +68,24 @@ namespace Algorithms.NET.Sorting.MergeSort
         /// <param name="rightHalf">A list of the right half</param>
         /// <param name="list">Original list in which we want to insert items correctly</param>
         /// <param name="sortDescending">Boolean value of whether sorting should be done in descending order or not</param>
-        private static void Merge(List<double> leftHalf, List<double> rightHalf, List<double> list,bool sortDescending)
+        private static void Merge(List<double> leftHalf, List<double> rightHalf, List<double> list, bool sortDescending)
         {
             int i = 0, j = 0, k = 0;
-            
+
             //We insert the first items in the correct order by comparing them to each others
-            while(i < leftHalf.Count && j < rightHalf.Count)
+            while (i < leftHalf.Count && j < rightHalf.Count)
             {
-                if(!sortDescending && leftHalf[i] < rightHalf[j])
+                if (!sortDescending && leftHalf[i] < rightHalf[j])
                     list[k++] = leftHalf[i++];
-                else 
+                else
                     list[k++] = rightHalf[j++];
             }
 
             //We insert the remaining items 
-            while(j < rightHalf.Count)
+            while (j < rightHalf.Count)
                 list[k++] = rightHalf[j++];
 
-            while(i < leftHalf.Count)
+            while (i < leftHalf.Count)
                 list[k++] = leftHalf[i++];
         }
     }

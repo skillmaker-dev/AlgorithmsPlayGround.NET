@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Algorithms.NET.Sorting.BubbleSort
 {
@@ -48,7 +47,7 @@ namespace Algorithms.NET.Sorting.BubbleSort
                         (sortedList[j - 1], sortedList[j]) = (sortedList[j], sortedList[j - 1]);
                         isSorted = false;
                     }
-                    else if(!sortDescending && sortedList[j - 1] > sortedList[j])
+                    else if (!sortDescending && sortedList[j - 1] > sortedList[j])
                     {
                         (sortedList[j - 1], sortedList[j]) = (sortedList[j], sortedList[j - 1]);
                         isSorted = false;

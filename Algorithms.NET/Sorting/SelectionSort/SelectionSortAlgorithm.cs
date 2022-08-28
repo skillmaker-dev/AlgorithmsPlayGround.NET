@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Algorithms.NET.Sorting.SelectionSort
 {
@@ -23,7 +21,7 @@ namespace Algorithms.NET.Sorting.SelectionSort
         /// <returns>Sorted list in ascending order.</returns>
         public static IEnumerable<double> SortAscending(List<double> list)
         {
-            return Sort(list,false);
+            return Sort(list, false);
         }
 
         /// <summary>
@@ -32,15 +30,15 @@ namespace Algorithms.NET.Sorting.SelectionSort
         /// <param name="list">List of numbers to sort</param>
         /// <param name="sortDescending">Boolean value specifying whether sorting should be done in descending order</param>
         /// <returns>A sorted list</returns>
-        private static IEnumerable<double> Sort(List<double> list,bool sortDescending)
+        private static IEnumerable<double> Sort(List<double> list, bool sortDescending)
         {
             var sortedList = new List<double>(list);
-            for(int i = 0; i < sortedList.Count; i++)
+            for (int i = 0; i < sortedList.Count; i++)
             {
                 double min = sortedList[i];
                 double max = sortedList[i];
                 int index = i;
-                for(int j = i; j< list.Count; j++)
+                for (int j = i; j < list.Count; j++)
                 {
                     //Finding max or min according to boolean value of sortDescending
                     if (!sortDescending && sortedList[j] < min)
@@ -55,7 +53,7 @@ namespace Algorithms.NET.Sorting.SelectionSort
                     }
 
                 }
-                if(index != i)
+                if (index != i)
                     (sortedList[i], sortedList[index]) = (sortedList[index], sortedList[i]);
             }
 
