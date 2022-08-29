@@ -32,7 +32,7 @@ namespace Algorithms.NET.Sorting.MergeSort
         /// <param name="list">List of numbers to sort</param>
         /// <param name="sortDescending">Boolean value specifying whether sorting should be done in descending order</param>
         /// <returns>A sorted list</returns>
-        private static List<double> Sort(List<double> list, bool sortDescending)
+        public static List<double> Sort(List<double> list, bool sortDescending)
         {
             //We stop recursion when size is 1, which means an array of one element is sorted.
             if (list.Count < 2)

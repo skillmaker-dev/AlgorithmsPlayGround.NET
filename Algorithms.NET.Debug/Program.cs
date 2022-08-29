@@ -1,10 +1,15 @@
-﻿List<double> unsortedAsc = new() { 0, 1, 2, 3, 4, 5 };
+﻿using Algorithms.NET.Debug;
+using BenchmarkDotNet.Running;
+
+List<double> unsortedAsc = new() { 0, 1, 2, 3, 4, 5 };
 List<double> unsortedDesc = new() { 5, 4, 3, 2, 1, 0 };
-List<int> unsortedRand = new() { 8, 9, 3, 3, 10, 1 };
+List<double> unsortedRand = new() { 8, 9, 3, 3, 100000, 1 };
+List<double> unsorted01 = new() { .8, .9, .3, .3, .1,0 };
 
 //var sortedDesc = Algorithms.NET.Sorting.MergeSort.MergeSortAlgorithm.SortDescending(unsortedAsc);
-var sortedAsc = Algorithms.NET.Sorting.CountingSort.CountingSortAlgorithm.SortAscending(unsortedRand.ToArray());
-var sortedDesc = Algorithms.NET.Sorting.CountingSort.CountingSortAlgorithm.SortDescending(unsortedRand.ToArray());
+var sortedAsc = Algorithms.NET.Sorting.BucketSort.BucketSortAlgorithm.SortAscending(unsorted01);
+var sortedDesc = Algorithms.NET.Sorting.BucketSort.BucketSortAlgorithm.SortDescending(unsorted01);
+//var sortedDesc = Algorithms.NET.Sorting.CountingSort.CountingSortAlgorithm.SortDescending(unsortedRand.ToArray());
 
 
 foreach (var item in sortedDesc)
@@ -24,7 +29,7 @@ foreach (var item in sortedAsc)
 //    _unsortedAsc.Add(rand.Next(1000000));
 //}
 
-//var summary = BenchmarkRunner.Run<BenchmarkDemo>();
+var summary = BenchmarkRunner.Run<BenchmarkDemo>();
 
 
 
