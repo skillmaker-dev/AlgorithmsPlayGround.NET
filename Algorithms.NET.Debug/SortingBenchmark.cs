@@ -9,35 +9,36 @@ using BenchmarkDotNet.Attributes;
 namespace Algorithms.NET.Debug
 {
     [MemoryDiagnoser]
-    public class BenchmarkDemo
+    public class SortingBenchmark
     {
-        private List<double> _unsorted = new();
-        private List<double> _unsorted2 = new();
+        private readonly List<double> _unsorted = new();
+        private readonly List<double> _unsorted2 = new();
 
-        public BenchmarkDemo()
+        public SortingBenchmark()
         {
             var rand = new Random();
             for (int i = 0; i < 10000; i++)
             {
-                _unsorted.Add(rand.NextDouble());
-                _unsorted2.Add(rand.Next(1000000));
+                double number = rand.NextDouble();
+                _unsorted.Add(number);
+                _unsorted2.Add(number);
             }
         }
 
-        //[Benchmark]
+        [Benchmark]
         public void BuiltInSort() =>
         _unsorted2.Sort();
 
 
-        //[Benchmark]
+        [Benchmark]
         public void BubbleSort() =>
         BubbleSortAlgorithm.SortAscending(_unsorted);
 
-        //[Benchmark]
+        [Benchmark]
         public void SelectionSort() =>
         SelectionSortAlgorithm.SortAscending(_unsorted);
 
-        //[Benchmark]
+        [Benchmark]
         public void InsertionSort() =>
         InsertionSortAlgorithm.SortAscending(_unsorted);
 
@@ -45,7 +46,7 @@ namespace Algorithms.NET.Debug
         public void MergeSort() =>
         MergeSortAlgorithm.SortAscending(_unsorted);
 
-        //[Benchmark]
+        [Benchmark]
         public void QuickSort() =>
         QuickSortAlgorithm.SortAscending(_unsorted);
 
