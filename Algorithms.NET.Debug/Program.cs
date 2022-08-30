@@ -15,6 +15,7 @@ List<double> unsorted01 = new() { .8, .9, .3, .3, .1,0 };
 //Console.WriteLine(Algorithms.NET.Searching.BinarySearch.BinarySearchAlgorithm.SearchIterative(0, unsortedAsc));
 
 Console.WriteLine(Algorithms.NET.Searching.TernarySearch.TernarySearchAlgorithm.Search(8, unsortedAsc));
+Console.WriteLine(Algorithms.NET.Searching.JumpSearch.JumpSearchAlgorithm.Search(0, unsortedAsc));
 
 //foreach (var item in sortedDesc)
 //{
@@ -34,7 +35,7 @@ Console.WriteLine(Algorithms.NET.Searching.TernarySearch.TernarySearchAlgorithm.
 //}
 
 //var sortingBenchmarkSummary = BenchmarkRunner.Run<SortingBenchmark>();
-var searchingBenchmarkSummary = BenchmarkRunner.Run<SearchingBenchmark>();
+//var searchingBenchmarkSummary = BenchmarkRunner.Run<SearchingBenchmark>();
 
 
 
