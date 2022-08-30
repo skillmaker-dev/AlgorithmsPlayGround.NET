@@ -25,7 +25,7 @@ namespace Algorithms.NET.Searching.BinarySearch
         /// <param name="endIndex">End index of searching.</param>
         /// <param name="startIndex">Start index of searching.</param>
         /// <returns>Index of item if found, Otherwise returns -1.</returns>
-        private static int SearchRecursive(double item, List<double> sortedList, int startIndex, int endIndex)
+        public static int SearchRecursive(double item, List<double> sortedList, int startIndex, int endIndex)
         {
             if (startIndex > endIndex)
                 return -1;

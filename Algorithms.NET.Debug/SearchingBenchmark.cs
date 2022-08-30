@@ -37,6 +37,9 @@ namespace Algorithms.NET.Debug
         public void TernarySearchRecursive() => Algorithms.NET.Searching.TernarySearch.TernarySearchAlgorithm.Search(0, _sortedList);
 
         [Benchmark]
-        public void JumpSearch() => Algorithms.NET.Searching.JumpSearch.JumpSearchAlgorithm.Search(0, _sortedList);
+        public void JumpSearch() => Algorithms.NET.Searching.JumpSearch.JumpSearchAlgorithm.Search(10000, _sortedList);
+
+        [Benchmark]
+        public void ExponentialSearch() => Algorithms.NET.Searching.ExponentialSearch.ExponentialSearchAlgorithm.Search(10000, _sortedList);
     }
 }
