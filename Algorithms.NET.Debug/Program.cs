@@ -34,7 +34,7 @@ Console.WriteLine(Algorithms.NET.Searching.TernarySearch.TernarySearchAlgorithm.
 //}
 
 //var sortingBenchmarkSummary = BenchmarkRunner.Run<SortingBenchmark>();
-//var searchingBenchmarkSummary = BenchmarkRunner.Run<SearchingBenchmark>();
+var searchingBenchmarkSummary = BenchmarkRunner.Run<SearchingBenchmark>();
 
 
 

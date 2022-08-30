@@ -32,5 +32,8 @@ namespace Algorithms.NET.Debug
 
         [Benchmark]
         public void BinarySearchIterative() => Algorithms.NET.Searching.BinarySearch.BinarySearchAlgorithm.SearchIterative(0, _sortedList);
+
+        [Benchmark]
+        public void TernarySearchRecursive() => Algorithms.NET.Searching.TernarySearch.TernarySearchAlgorithm.Search(0, _sortedList);
     }
 }
