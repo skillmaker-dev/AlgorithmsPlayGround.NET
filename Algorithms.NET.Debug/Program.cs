@@ -11,8 +11,10 @@ List<double> unsorted01 = new() { .8, .9, .3, .3, .1,0 };
 //var sortedDesc = Algorithms.NET.Sorting.BucketSort.BucketSortAlgorithm.SortDescending(unsorted01);
 //var sortedDesc = Algorithms.NET.Sorting.CountingSort.CountingSortAlgorithm.SortDescending(unsortedRand.ToArray());
 //Console.WriteLine(Algorithms.NET.Searching.LinearSearch.LinearSearchAlgorithm.Search(4, unsortedAsc));
-Console.WriteLine(Algorithms.NET.Searching.BinarySearch.BinarySearchAlgorithm.SearchRecursive(0, unsortedAsc));
-Console.WriteLine(Algorithms.NET.Searching.BinarySearch.BinarySearchAlgorithm.SearchIterative(0, unsortedAsc));
+//Console.WriteLine(Algorithms.NET.Searching.BinarySearch.BinarySearchAlgorithm.SearchRecursive(0, unsortedAsc));
+//Console.WriteLine(Algorithms.NET.Searching.BinarySearch.BinarySearchAlgorithm.SearchIterative(0, unsortedAsc));
+
+Console.WriteLine(Algorithms.NET.Searching.TernarySearch.TernarySearchAlgorithm.Search(8, unsortedAsc));
 
 //foreach (var item in sortedDesc)
 //{
@@ -32,7 +34,7 @@ Console.WriteLine(Algorithms.NET.Searching.BinarySearch.BinarySearchAlgorithm.Se
 //}
 
 //var sortingBenchmarkSummary = BenchmarkRunner.Run<SortingBenchmark>();
-var searchingBenchmarkSummary = BenchmarkRunner.Run<SearchingBenchmark>();
+//var searchingBenchmarkSummary = BenchmarkRunner.Run<SearchingBenchmark>();
 
 
 
