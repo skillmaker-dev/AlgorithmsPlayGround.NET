@@ -34,4 +34,19 @@ or
  Then run the project in ```Release Mode```
  
  ### Here is the explanation of each algorithm: 
- Coming soon
+
+### Sorting:
+- Bubble Sort : https://www.programiz.com/dsa/bubble-sort
+- Insertion Sort : https://www.programiz.com/dsa/insertion-sort
+- Selection Sort : https://www.programiz.com/dsa/selection-sort
+- Bucket Sort : https://www.programiz.com/dsa/bucket-sort
+- Merge Sort : https://www.programiz.com/dsa/merge-sort
+- Quick Sort : https://www.programiz.com/dsa/quick-sort
+- Counting Sort : https://www.programiz.com/dsa/counting-sort
+
+### Searching:
+- Binary Search : https://www.programiz.com/dsa/binary-search
+- Ternary Search :  Same as binary search but with dividing in 3 sections.
+- Jump Search : https://en.wikipedia.org/wiki/Jump_search
+- Linear Search : https://www.programiz.com/dsa/linear-search
+- Exponential Search : https://en.wikipedia.org/wiki/Exponential_search
