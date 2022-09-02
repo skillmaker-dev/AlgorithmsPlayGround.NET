@@ -33,6 +33,16 @@ or
  
  Then run the project in ```Release Mode```
  
+ ## Benchmark
+ 
+ ### Sorting algorithms comparison: 
+ ![SortBenchmark](https://user-images.githubusercontent.com/64654197/188233893-6ca26a71-7a30-4c21-95df-b25bb8719a6e.png)
+ 
+ ### Searching algorithms comparison: 
+ ![SearchingBenchmark](https://user-images.githubusercontent.com/64654197/188233962-b8a86341-007e-4e86-b607-52183f6acac2.png)
+
+
+ 
  ### Here is the explanation of each algorithm: 
 
 ### Sorting:
