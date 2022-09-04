@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Algorithms.NET.Sorting.MergeSort
 {
@@ -24,6 +25,29 @@ namespace Algorithms.NET.Sorting.MergeSort
         {
             List<double> sortedList = new List<double>(list);
             return Sort(sortedList, true);
+        }
+
+
+        /// <summary>
+        /// Sorting a list of numbers in ascending order using MergeSort algorithm, Time complexity of O(n Log n).
+        /// </summary>
+        /// <param name="list">List of numbers to sort</param>
+        /// <returns>Sorted list in ascending order.</returns>
+        public static List<double> SortAscendingParallel(List<double> list)
+        {
+            List<double> sortedList = new List<double>(list);
+            return SortParallel(sortedList, false);
+        }
+
+        /// <summary>
+        /// Sorting a list of numbers in descending order using MergeSort algorithm, Time complexity of O(n Log n).
+        /// </summary>
+        /// <param name="list">List of numbers to sort</param>
+        /// <returns>Sorted list in descending order.</returns>
+        public static List<double> SortDescendingParallel(List<double> list)
+        {
+            List<double> sortedList = new List<double>(list);
+            return SortParallel(sortedList, true);
         }
 
         /// <summary>
@@ -60,6 +84,50 @@ namespace Algorithms.NET.Sorting.MergeSort
 
             return list;
         }
+
+
+        /// <summary>
+        /// Sorting a list of numbers using MergeSort algorithm, Time complexity of O(n Log n).
+        /// </summary>
+        /// <param name="list">List of numbers to sort</param>
+        /// <param name="sortDescending">Boolean value specifying whether sorting should be done in descending order</param>
+        /// <returns>A sorted list</returns>
+        public static List<double> SortParallel(List<double> list, bool sortDescending)
+        {
+            //We stop recursion when size is 1, which means an array of one element is sorted.
+            if (list.Count < 2)
+                return list;
+
+            //Divide list in half.
+            int middle = list.Count / 2;
+
+            List<double> left = new List<double>();
+            List<double> right = new List<double>();
+
+            //Fill each half
+            for (int i = 0; i < middle; i++)
+                left.Add(list[i]);
+
+            for (int j = middle; j < list.Count; j++)
+                right.Add(list[j]);
+
+            //Sort each half, use parallel execution when input size is big to help improve performance.
+
+            if (left.Count > 10000)
+                Parallel.Invoke(() => SortParallel(left, sortDescending), () => SortParallel(right, sortDescending));
+            else
+            {
+                SortParallel(left, sortDescending);
+                SortParallel(right, sortDescending);
+            }
+               
+
+            //Merge the results
+            Merge(left, right, list, sortDescending);
+
+            return list;
+        }
+
 
         /// <summary>
         /// Merging two arrays in correct order according to the boolean value of sortDescending

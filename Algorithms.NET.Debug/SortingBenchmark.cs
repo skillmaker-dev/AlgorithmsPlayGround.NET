@@ -17,7 +17,7 @@ namespace Algorithms.NET.Debug
         public SortingBenchmark()
         {
             var rand = new Random();
-            for (int i = 0; i < 10000; i++)
+            for (int i = 0; i < 50000; i++)
             {
                 double number = rand.NextDouble();
                 _unsorted.Add(number);
@@ -45,6 +45,10 @@ namespace Algorithms.NET.Debug
         [Benchmark]
         public void MergeSort() =>
         MergeSortAlgorithm.SortAscending(_unsorted);
+
+        [Benchmark]
+        public void MergeSortParallel() =>
+        MergeSortAlgorithm.SortAscendingParallel(_unsorted);
 
         [Benchmark]
         public void QuickSort() =>

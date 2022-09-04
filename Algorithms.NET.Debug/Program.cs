@@ -6,7 +6,7 @@ List<double> unsortedDesc = new() { 5, 4, 3, 2, 1, 0 };
 List<double> unsortedRand = new() { 8, 9, 3, 3, 7, 1 };
 List<double> unsortedLessThan1 = new() { .8, .9, .3, .3, .1,0 };
 
-var sortedDesc = Algorithms.NET.Sorting.MergeSort.MergeSortAlgorithm.SortDescending(unsortedAsc);
+var sortedDesc = Algorithms.NET.Sorting.MergeSort.MergeSortAlgorithm.SortDescendingParallel(unsortedAsc);
 var sortedAsc = Algorithms.NET.Sorting.BucketSort.BucketSortAlgorithm.SortAscending(unsortedLessThan1);
 
 
@@ -36,7 +36,7 @@ foreach (var item in sortedAsc)
 
 
 
-//var sortingBenchmarkSummary = BenchmarkRunner.Run<SortingBenchmark>();
+var sortingBenchmarkSummary = BenchmarkRunner.Run<SortingBenchmark>();
 //var searchingBenchmarkSummary = BenchmarkRunner.Run<SearchingBenchmark>();
 
 
