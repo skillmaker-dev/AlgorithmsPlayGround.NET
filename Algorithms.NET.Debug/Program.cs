@@ -36,8 +36,8 @@ foreach (var item in sortedAsc)
 
 
 
-var sortingBenchmarkSummary = BenchmarkRunner.Run<SortingBenchmark>();
-//var searchingBenchmarkSummary = BenchmarkRunner.Run<SearchingBenchmark>();
+//var sortingBenchmarkSummary = BenchmarkRunner.Run<SortingBenchmark>();
+var searchingBenchmarkSummary = BenchmarkRunner.Run<SearchingBenchmark>();
 
 
 
