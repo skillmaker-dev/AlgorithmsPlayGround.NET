@@ -41,7 +41,7 @@ or
  #### Note :  BuiltIn Sorting algorithm uses an unstable version of QuickSort, and after .NET 4.5 it now uses Insertion sort for n<16, otherwise it starts with Quicksort and switches to Heapsort when the number of partitions (recursion depth?) exceeds 2 * Log^N. Called: Introsort, and that explains why it is the fastest.
  
  ### Searching algorithms comparison: 
- ![SearchingBenchmark](https://user-images.githubusercontent.com/64654197/188233962-b8a86341-007e-4e86-b607-52183f6acac2.png)
+ ![image](https://user-images.githubusercontent.com/64654197/188931369-ce7a208b-73a7-4f62-8854-b38acff6c0c6.png)
 
 
  
